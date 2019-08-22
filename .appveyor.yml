@@ -33,14 +33,17 @@ build_script:
   - git checkout %BUILD_COMMIT%
   - python setup.py bdist_wheel -DCMAKE_GENERATOR_PLATFORM=%PLATFORM%
   - dir dist
-  - cd ..
+  - cd
+
+artifacts:
+  - path: deform/dist/pydeform-*.whl
+    name: wheel
 
 deploy:
   provider: GitHub
   auth_token:
     secure: CUUoJsg4ti4ilv5xaRgBHyZt3yyMNfMVP2zm50x/Rs3EgBBwmCu7eggMzkLH3A/Z
-  artifact:
-  - path: deform\dist\*.whl
+  artifact: wheel
   force_update: true
   on:
     APPVEYOR_REPO_TAG: true
