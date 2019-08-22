@@ -1,0 +1,6 @@
+[submodule "deform"]
+	path = deform
+	url = https://github.com/simeks/deform.git
+[submodule "multibuild"]
+	path = multibuild
+	url = https://github.com/matthew-brett/multibuild.git
