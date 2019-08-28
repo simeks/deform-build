@@ -12,25 +12,28 @@ services: docker
 dist: xenial
 matrix:
   include:
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.4
-  - os: linux
+  # - os: linux
+  #   env:
+  #   - MB_PYTHON_VERSION=3.4
+  # - os: linux
+  #   env:
+  #   - MB_PYTHON_VERSION=3.5
+  # - os: linux
+  #   env:
+  #   - MB_PYTHON_VERSION=3.6
+  # - os: linux
+  #   env:
+  #   - MB_PYTHON_VERSION=3.7
+  - os: osx
+    language: generic
     env:
     - MB_PYTHON_VERSION=3.5
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.6
-  - os: linux
-    env:
-    - MB_PYTHON_VERSION=3.7
   - os: osx
-    env:
-    - MB_PYTHON_VERSION=3.5
-  - os: osx
+    language: generic
     env:
     - MB_PYTHON_VERSION=3.6
   - os: osx
+    language: generic
     env:
     - MB_PYTHON_VERSION=3.7
     - MB_PYTHON_OSX_VER=10.9
