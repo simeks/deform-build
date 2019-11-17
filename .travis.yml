@@ -1,7 +1,7 @@
 env:
   global:
   - REPO_DIR=deform
-  - BUILD_COMMIT=development
+  - BUILD_COMMIT=v0.5
   - BUILD_DEPENDS="numpy PyYAML SimpleITK"
   - TEST_DEPENDS="numpy PyYAML SimpleITK"
   - PLAT=x86_64
