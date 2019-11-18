@@ -34,6 +34,9 @@ build_script:
   - python setup.py bdist_wheel -DCMAKE_GENERATOR_PLATFORM=%PLATFORM%
   - dir dist
 
+artifacts:
+  - path: deform\dist\*.whl
+
 deploy:
   provider: GitHub
   auth_token:
