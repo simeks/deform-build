@@ -33,10 +33,11 @@ build_script:
   - git checkout %BUILD_COMMIT%
   - python setup.py bdist_wheel -DCMAKE_GENERATOR_PLATFORM=%PLATFORM%
   - dir dist
-  - twine check deform/dist/*.whl
+  - twine check dist/*.whl
+  - cd ..
 
 artifacts:
-  - path: deform\dist\*.whl
+  - path: deform/dist\*.whl
 
 deploy:
   provider: GitHub
