@@ -26,13 +26,14 @@ install:
   - git submodule update --init --recursive
   - set PATH=%PYTHON%;%PYTHON%\\Scripts;%PATH%
   - python -m pip install --upgrade pip
-  - pip install wheel
+  - pip install -U twine wheel setuptools
 
 build_script:
   - cd deform
   - git checkout %BUILD_COMMIT%
   - python setup.py bdist_wheel -DCMAKE_GENERATOR_PLATFORM=%PLATFORM%
   - dir dist
+  - twine check deform\dist\*.whl
 
 artifacts:
   - path: deform\dist\*.whl
@@ -41,7 +42,7 @@ deploy:
   provider: GitHub
   auth_token:
     secure: CUUoJsg4ti4ilv5xaRgBHyZt3yyMNfMVP2zm50x/Rs3EgBBwmCu7eggMzkLH3A/Z
-  artifact: deform\dist\*.whl
+  artifact: deform/dist/*.whl
   force_update: true
   on:
     APPVEYOR_REPO_TAG: true
